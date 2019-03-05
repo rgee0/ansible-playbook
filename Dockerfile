@@ -3,6 +3,7 @@ FROM alpine:3.7
 ENV ANSIBLE_VERSION 2.7.8
  
 ENV BUILD_PACKAGES \
+  boto3 \
   bash \
   curl \
   tar \
