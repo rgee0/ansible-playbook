@@ -3,7 +3,6 @@ FROM alpine:3.7
 ENV ANSIBLE_VERSION 2.7.8
  
 ENV BUILD_PACKAGES \
-  boto3 \
   bash \
   curl \
   tar \
@@ -36,7 +35,7 @@ RUN set -x && \
     echo "==> Adding Python runtime..."  && \
     apk add --no-cache ${BUILD_PACKAGES} && \
     pip install --upgrade pip && \
-    pip install python-keyczar docker-py dopy && \
+    pip install python-keyczar docker-py dopy boto3 && \
     \
     echo "==> Installing Ansible..."  && \
     pip install ansible==${ANSIBLE_VERSION} && \
